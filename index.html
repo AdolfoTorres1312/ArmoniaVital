@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Armonía Vital – Centro Holístico</title>
+
+  <!-- TIPOGRAFÍAS: título elegante + texto amable -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --verde-oscuro: #355b47;
+      --verde-claro: #cfe3d4;
+      --crema: #f6f2ec;
+      --arena: #d9b892;
+      --texto: #423c35;
+      --gris-suave: #e1ddd6;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--crema);
+      color: var(--texto);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(246, 242, 236, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .nav {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    /* Reemplazar este placeholder por el LOGO cuando lo tengas */
+    .brand-logo-placeholder {
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      border: 2px solid var(--verde-oscuro);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--verde-oscuro);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-text span:first-child {
+      font-family: "Playfair Display", serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--verde-oscuro);
+    }
+
+    .brand-text span:last-child {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #7d7468;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 600;
+      font-size: 0.72rem;
+      color: #6a6257;
+    }
+
+    .nav-links a:hover {
+      color: var(--verde-oscuro);
+    }
+
+    .nav-cta {
+      font-size: 0.8rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid var(--arena);
+      background: var(--arena);
+      color: #fff;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    /* LAYOUT GENERAL */
+
+    main {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.7rem;
+      color: var(--verde-oscuro);
+      margin-bottom: 0.8rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: #8a8176;
+      margin-bottom: 0.5rem;
+    }
+
+    /* HERO: GRAN ESPACIO PARA IMAGEN */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.3fr);
+      gap: 2rem;
+      align-items: center;
+      margin-top: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .hero-text h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 2.2rem;
+      color: var(--verde-oscuro);
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-text p {
+      font-size: 0.98rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      background: #e5efe6;
+      color: #3c5a40;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      color: #7b7267;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-badges span {
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid #dacfbf;
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 0.4rem;
+    }
+
+    .btn-primary {
+      background: var(--verde-oscuro);
+      color: #fff;
+      border-radius: 999px;
+      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
+      border: none;
+    }
+
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
+      border: 1px solid #c9c0b4;
+      background: transparent;
+      color: #6b6358;
+    }
+
+    .hero-image-large {
+      background: #d9d7d0;
+      border-radius: 24px;
+      overflow: hidden;
+      height: 100%;
+      min-height: 260px;
+      display: flex;
+      align-items: stretch;
+    }
+
+    /* Aquí irá tu FOTO PRINCIPAL tipo cabina / masaje / aromaterapia */
+    .hero-image-large img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* QUIÉNES SOMOS / MISIÓN / VISIÓN */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2rem;
+    }
+
+    .card-soft {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 18px;
+      padding: 1.4rem;
+      border: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .card-soft h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.15rem;
+      color: var(--verde-oscuro);
+      margin-bottom: 0.4rem;
+    }
+
+    .card-soft p {
+      font-size: 0.96rem;
+    }
+
+    .card-soft + .card-soft {
+      margin-top: 0.8rem;
+    }
+
+    /* NECESIDAD QUE RESOLVEMOS */
+
+    .need-section {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .need-list {
+      list-style: none;
+      margin-top: 0.6rem;
+      font-size: 0.95rem;
+    }
+
+    .need-list li::before {
+      content: "•";
+      color: var(--verde-oscuro);
+      margin-right: 0.4rem;
+    }
+
+    .need-image-block {
+      border-radius: 24px;
+      overflow: hidden;
+      background: #c8d4c9;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 0.5rem;
+    }
+
+    .need-image-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.5rem;
+      flex: 1;
+    }
+
+    .need-image-row img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+
+    /* SERVICIOS */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .service-card {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 18px;
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .service-image {
+      height: 150px;
+      background: #d0c9c0;
+      overflow: hidden;
+    }
+
+    .service-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .service-body {
+      padding: 1rem 1rem 1.2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .service-body h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.05rem;
+      color: var(--verde-oscuro);
+    }
+
+    .service-body p {
+      font-size: 0.9rem;
+    }
+
+    .service-tags {
+      margin-top: 0.4rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      font-size: 0.75rem;
+    }
+
+    .service-tags span {
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: #f0e4d6;
+      color: #6c5f52;
+    }
+
+    /* GALERÍA GRANDE */
+
+    .gallery-wrap {
+      margin-top: 1rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-auto-rows: 120px;
+      gap: 0.5rem;
+    }
+
+    .gallery-item {
+      border-radius: 16px;
+      overflow: hidden;
+      background: #d2d0cb;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* AMBIENTE & EXPERIENCIA SENSORIAL – SOLO FOTOS */
+
+    .mood-grid {
+      display: grid;
+      grid-template-columns: 2fr 1.5fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .mood-large {
+      border-radius: 22px;
+      overflow: hidden;
+      height: 260px;
+      background: #cdd7cf;
+    }
+
+    .mood-large img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .mood-column {
+      display: grid;
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      gap: 0.5rem;
+    }
+
+    .mood-small {
+      border-radius: 18px;
+      overflow: hidden;
+      background: #d4cbc1;
+    }
+
+    .mood-small img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* CONTACTO */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .contact-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 1.5rem;
+      border: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .contact-row {
+      margin-top: 0.3rem;
+      font-size: 0.95rem;
+    }
+
+    .contact-label {
+      font-weight: 600;
+      color: var(--verde-oscuro);
+    }
+
+    .contact-note {
+      font-size: 0.85rem;
+      color: #837b6f;
+      margin-top: 0.7rem;
+    }
+
+    .map-placeholder {
+      border-radius: 20px;
+      overflow: hidden;
+      background: #d0d5c9;
+      min-height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: #616355;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    footer {
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+      padding: 1rem 1.25rem 1.5rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #8a8378;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .hero,
+      .about-grid,
+      .need-section,
+      .services-grid,
+      .mood-grid,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero {
+        margin-top: 1rem;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .services-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: 110px;
+      }
+
+      main {
+        padding-inline: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="nav">
+      <div class="brand">
+        <div class="brand-logo-placeholder">
+          AV
+        </div>
+        <div class="brand-text">
+          <span>Armonía Vital</span>
+          <span>Estética & Bienestar Holístico</span>
+        </div>
+      </div>
+
+      <div class="nav-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#quienes-somos">Quiénes somos</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#galeria">Galería</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+
+      <a href="#contacto" class="nav-cta">Agenda & consultas</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+      <div class="hero-text">
+        <div class="hero-pill">Centro de estética holística · Armonía Vital</div>
+        <h1>Bienestar estético, emocional y energético en un solo espacio.</h1>
+
+        <p>
+          Armonía Vital es un centro holístico dedicado a la estética profesional,
+          el autocuidado y la salud emocional. Integramos tratamientos estéticos, terapias naturales y
+          apoyo interdisciplinario para mejorar el bienestar físico, mental y espiritual de cada persona.
+        </p>
+
+        <div class="hero-badges">
+          <span>Estética profesional</span>
+          <span>Terapias naturales</span>
+          <span>Aromaterapia & Feng Shui</span>
+          <span>Espacios multisensoriales</span>
+        </div>
+
+        <div class="hero-cta-row">
+          <a href="#servicios" class="btn-primary">Ver servicios</a>
+          <a href="#contacto" class="btn-ghost">Consultar disponibilidad</a>
+        </div>
+      </div>
+
+      <div class="hero-image-large">
+        <!-- FOTO PRINCIPAL GRANDE -->
+        <img src="img/hero-cabina-principal.jpg" alt="Cabina de relajación y masaje en Armonía Vital">
+      </div>
+    </section>
+
+    <!-- QUIÉNES SOMOS / MISIÓN / VISIÓN -->
+    <section id="quienes-somos">
+      <div class="section-subtitle">Sobre Armonía Vital</div>
+      <h2 class="section-title">Quiénes somos, misión y visión</h2>
+
+      <div class="about-grid">
+        <div>
+          <div class="card-soft">
+            <h3>¿Quiénes somos?</h3>
+            <p>
+              Armonía Vital es un centro holístico dedicado a la estética profesional, el autocuidado y la salud emocional.
+              Integramos tratamientos estéticos, terapias naturales y apoyo interdisciplinario para mejorar el bienestar físico,
+              mental y espiritual de cada persona.
+            </p>
+          </div>
+
+          <div class="card-soft">
+            <h3>Nuestra misión</h3>
+            <p>
+              Brindar servicios estéticos personalizados desde una visión holística, priorizando el autocuidado preventivo
+              y el equilibrio interior, acompañando a cada persona en su proceso de transformación y bienestar integral.
+            </p>
+          </div>
+
+          <div class="card-soft">
+            <h3>Nuestra visión</h3>
+            <p>
+              Convertirnos en un espacio de referencia en bienestar integral, donde cada persona encuentre armonía entre mente,
+              cuerpo y emociones, integrando estética, terapias naturales y experiencias sensoriales que favorezcan la salud preventiva.
+            </p>
+          </div>
+        </div>
+
+        <div class="card-soft">
+          <h3>Equipo & enfoque holístico</h3>
+          <p>
+            Nuestro equipo interdisciplinario integra cosmetología, terapias complementarias y acompañamiento emocional,
+            utilizando aromaterapia, principios de feng shui y ambientes cuidadosamente diseñados para favorecer la relajación profunda.
+          </p>
+          <p style="margin-top:0.6rem;">
+            Cada tratamiento se adapta a las necesidades de la persona, considerando su historia, contexto y objetivos de bienestar,
+            más allá de lo meramente estético.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NECESIDAD QUE RESOLVEMOS -->
+    <section>
+      <div class="section-subtitle">Necesidad que resolvemos</div>
+      <h2 class="section-title">Más que estética: bienestar integral</h2>
+
+      <div class="need-section">
+        <div>
+          <p>
+            Muchas personas buscan mejorar su apariencia física sin atender factores emocionales como estrés, ansiedad o autoestima.
+            Esto impacta directamente en los resultados estéticos y en la calidad de vida.
+          </p>
+          <p style="margin-top:0.6rem;">
+            Armonía Vital responde a esta necesidad integrando:
+          </p>
+
+          <ul class="need-list">
+            <li>Estética profesional y tratamientos personalizados.</li>
+            <li>Terapias naturales y técnicas de relajación.</li>
+            <li>Acompañamiento emocional y enfoque preventivo.</li>
+            <li>Recomendaciones de autocuidado y hábitos saludables.</li>
+            <li>Espacios multisensoriales diseñados para el descanso mental.</li>
+          </ul>
+        </div>
+
+        <div class="need-image-block">
+          <!-- Aquí puedes poner diferentes fotos del centro -->
+          <div class="need-image-row">
+            <img src="img/cabina-masajes.jpg" alt="Cabina de masajes con luz cálida">
+            <img src="img/aromaterapia-velas.jpg" alt="Aromaterapia y velas relajantes">
+          </div>
+          <div class="need-image-row">
+            <img src="img/detalle-fengshui.jpg" alt="Detalles feng shui en el centro">
+            <img src="img/sala-espera-relajante.jpg" alt="Sala de espera con ambiente relajante">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios">
+      <div class="section-subtitle">Nuestros servicios</div>
+      <h2 class="section-title">Estética, terapias y bienestar emocional</h2>
+
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="service-image">
+            <img src="img/tratamiento-facial.jpg" alt="Tratamientos faciales personalizados">
+          </div>
+          <div class="service-body">
+            <h3>Tratamientos faciales personalizados</h3>
+            <p>
+              Evaluación de tipo de piel, limpieza profunda, hidratación, revitalización y protocolos según cada necesidad.
+            </p>
+            <div class="service-tags">
+              <span>Limpieza profunda</span>
+              <span>Hidratación</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-image">
+            <img src="img/tratamiento-corporal.jpg" alt="Tratamientos corporales reductivos y reafirmantes">
+          </div>
+          <div class="service-body">
+            <h3>Tratamientos corporales</h3>
+            <p>
+              Protocolos reductivos y reafirmantes acompañados de recomendaciones de hábitos saludables y drenaje.
+            </p>
+            <div class="service-tags">
+              <span>Reductivo</span>
+              <span>Reafirmante</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-image">
+            <img src="img/drenaje-linfatico.jpg" alt="Drenaje linfático manual y mecánico">
+          </div>
+          <div class="service-body">
+            <h3>Drenaje linfático</h3>
+            <p>
+              Drenaje linfático manual y mecánico para ayudar a reducir edemas, pesadez y retención de líquidos.
+            </p>
+            <div class="service-tags">
+              <span>Post operatorio</span>
+              <span>Retención líquidos</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-image">
+            <img src="img/masaje-descontracturante.jpg" alt="Masajes descontracturantes y de relajación">
+          </div>
+          <div class="service-body">
+            <h3>Masajes terapéuticos</h3>
+            <p>
+              Masajes descontracturantes, de relajación y piedras calientes, orientados a liberar tensión física y mental.
+            </p>
+            <div class="service-tags">
+              <span>Descontracturante</span>
+              <span>Relajación</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-image">
+            <img src="img/terapias-naturales.jpg" alt="Terapias naturales y aromaterapia">
+          </div>
+          <div class="service-body">
+            <h3>Terapias naturales & aromaterapia</h3>
+            <p>
+              Uso de aceites esenciales, esencias personalizadas y principios de aromaterapia para acompañar procesos emocionales.
+            </p>
+            <div class="service-tags">
+              <span>Aromaterapia</span>
+              <span>Esencias</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-image">
+            <img src="img/espacio-multisensorial.jpg" alt="Espacios multisensoriales de relajación">
+          </div>
+          <div class="service-body">
+            <h3>Espacios multisensoriales</h3>
+            <p>
+              Salas con iluminación cálida, música, aromaterapia y detalles feng shui pensados para la calma interior.
+            </p>
+            <div class="service-tags">
+              <span>Feng Shui</span>
+              <span>Relajación profunda</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- GALERÍA GENERAL -->
+    <section id="galeria">
+      <div class="section-subtitle">Galería</div>
+      <h2 class="section-title">Un espacio diseñado para tu armonía</h2>
+
+      <p style="max-width:650px;margin-bottom:1rem;font-size:0.95rem;">
+        Aquí podrás visualizar parte de nuestras cabinas, salas de masaje, detalles de aromaterapia,
+        decoración inspirada en feng shui y ambientes pensados para tu bienestar integral.
+      </p>
+
+      <div class="gallery-wrap">
+        <div class="gallery-grid">
+          <!-- Reemplaza cada imagen por fotos reales de tu centro -->
+          <div class="gallery-item">
+            <img src="img/galeria-01.jpg" alt="Cabina de masaje con luz tenue">
+          </div>
+          <div class="gallery-item">
+            <img src="img/galeria-02.jpg" alt="Detalles de aromaterapia y esencias">
+          </div>
+          <div class="gallery-item">
+            <img src="img/galeria-03.jpg" alt="Decoración con plantas y piedras">
+          </div>
+          <div class="gallery-item">
+            <img src="img/galeria-04.jpg" alt="Sala de espera acogedora">
+          </div>
+          <div class="gallery-item">
+            <img src="img/galeria-05.jpg" alt="Camilla con toallas y flores">
+          </div>
+          <div class="gallery-item">
+            <img src="img/galeria-06.jpg" alt="Difusores y aceites esenciales">
+          </div>
+          <div class="gallery-item">
+            <img src="img/galeria-07.jpg" alt="Rincón de meditación">
+          </div>
+          <div class="gallery-item">
+            <img src="img/galeria-08.jpg" alt="Vista general de una cabina holística">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AMBIENTE SENSORIAL: MUCHO ESPACIO VISUAL -->
+    <section>
+      <div class="section-subtitle">Ambiente & experiencia</div>
+      <h2 class="section-title">Relajación desde que entras al espacio</h2>
+
+      <div class="mood-grid">
+        <div class="mood-large">
+          <img src="img/ambiente-general.jpg" alt="Vista amplia del centro Armonía Vital">
+        </div>
+        <div class="mood-column">
+          <div class="mood-small">
+            <img src="img/detalle-velas.jpg" alt="Velas aromáticas y luz cálida">
+          </div>
+          <div class="mood-small">
+            <img src="img/detalle-plantas-piedras.jpg" alt="Plantas, piedras y elementos naturales">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto">
+      <div class="section-subtitle">Contacto</div>
+      <h2 class="section-title">Agenda tu experiencia en Armonía Vital</h2>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <p class="contact-row">
+            <span class="contact-label">Teléfono / WhatsApp: </span>
+            +56 9 XXXX XXXX
+          </p>
+          <p class="contact-row">
+            <span class="contact-label">Correo: </span>
+            contacto@armoniavital.cl
+          </p>
+          <p class="contact-row">
+            <span class="contact-label">Dirección: </span>
+            [Calle, número] · [Comuna] · [Ciudad]
+          </p>
+
+          <p class="contact-note">
+            Para agendar tu hora o resolver dudas, envíanos un mensaje por WhatsApp indicando
+            el servicio de interés y tu disponibilidad. Te responderemos con las opciones de horario
+            y recomendaciones previas a tu sesión.
+          </p>
+
+          <p class="contact-note">
+            También puedes usar este enlace directo:
+            <br>
+            <strong>wa.me/56XXXXXXXXX</strong> (reemplazar con tu número real).
+          </p>
+        </div>
+
+        <div class="map-placeholder">
+          Aquí puedes incrustar más adelante un mapa (Google Maps) con la ubicación del centro,
+          o simplemente colocar una imagen del entorno / fachada de Armonía Vital.
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © <span id="year"></span> Armonía Vital · Centro de estética y bienestar holístico.
+  </footer>
+
+  <!-- OPCIONAL: para actualizar el año automáticamente, puedes borrar este script si no quieres JS -->
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
